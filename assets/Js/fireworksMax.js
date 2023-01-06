@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
       window.setTimeout(callback, 1000 / 60);
     };
   let canvas, ctx, w, h;
-  let fireworksMax = 12;
-  let numberOfParticles = randomNumber(30, 100);
+  let fireworksMax = 22;
+  let numberOfParticles = randomNumber(90, 150);
   let fireworks = [],
     particles = [];
   let hue = 0;
@@ -91,8 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
     particles = dump2;
-    console.log(particles);
-
     clearTimeout(repeatExplosions);
   }
   function createFireworks(x, y) {
@@ -150,14 +148,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function randomNumber(min, max) {
     return Math.random() * (max - min) + min;
   }
-  // Chức năng tạo hạt
   function Particle(x, y) {
     this.radial = randomNumber(0.2, 0.9) * 8;
     this.x = x;
     this.y = y;
     this.al = 1;
     this.ttl = timeEnd;
-    //Vận tốc của hạt
     this.vx = (Math.random() - 0.5) * 10;
     this.vy = (Math.random() - 0.5) * 10;
     this.draw = function () {
@@ -173,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ctx.arc(0, 0, this.radial, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${getRandomInt(20, 255)},
        ${getRandomInt(0, 255)},${getRandomInt(0, 255)}, ${this.al})`;
-
       ctx.fill();
       ctx.closePath();
       ctx.restore();
@@ -186,6 +181,5 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
   window.addEventListener("resize", resizeReset);
-
   init();
 });
