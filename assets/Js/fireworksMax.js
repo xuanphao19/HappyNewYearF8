@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
       window.setTimeout(callback, 1000 / 60);
     };
   let canvas, ctx, w, h;
-  let fireworksMax = 12;
-  let numberOfParticles = randomNumber(20, 80);
+  let fireworksMax = 5;
+  let numberOfParticles = randomNumber(15, 90);
   let fireworks = [],
     particles = [];
   let hue = 0;
