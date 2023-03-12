@@ -1,4 +1,4 @@
-("use strict");
+"use strict";
 document.addEventListener("DOMContentLoaded", function () {
   window.requestAnimationFrame =
     window.requestAnimationFrame ||
@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return true;
     };
   }
+
   window.addEventListener("resize", resizeReset);
   init();
 });
